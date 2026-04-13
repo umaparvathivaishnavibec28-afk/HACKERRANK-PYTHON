@@ -1,0 +1,25 @@
+def merge_the_tools(string, k):
+    # Iterate through the string in chunks of size k
+    for i in range(0, len(string), k):
+        # Extract the substring
+        t = string[i : i + k]
+        
+        # Use a list to maintain order and a set for fast lookup
+        u = []
+        seen = set()
+        
+        for char in t:
+            if char not in seen:
+                u.append(char)
+                seen.add(char)
+        
+        # Print the resulting subsequence
+        print("".join(u))
+
+
+
+    # your code goes here
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
