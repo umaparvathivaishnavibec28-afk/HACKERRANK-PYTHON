@@ -1,0 +1,14 @@
+from itertools import combinations
+
+# Reading input
+N = int(input())
+letters = input().split()
+K = int(input())
+
+# Using combinations to find all possible index sets
+total_combinations = list(combinations(range(N), K))
+# Filtering for combinations that contain at least one index where letters[index] == 'a'
+favorable = [c for c in total_combinations if any(letters[i] == 'a' for i in c)]
+
+# Calculating probability
+print(round(len(favorable) / len(total_combinations), 4))
