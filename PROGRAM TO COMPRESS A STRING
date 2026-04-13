@@ -1,0 +1,14 @@
+# Read the input string
+s = input()
+
+# Use groupby to find consecutive characters
+# k is the character (key), g is the iterator containing the consecutive occurrences
+result = []
+for k, g in groupby(s):
+    # Convert the iterator g to a list to find the count (X)
+    count = len(list(g))
+    # Append the formatted tuple (X, c) as a string
+    result.append(f"({count}, {k})")
+
+# Join all tuples with a single space as per output format
+print(" ".join(result))
