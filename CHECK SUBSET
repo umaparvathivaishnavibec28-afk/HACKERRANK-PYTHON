@@ -1,0 +1,9 @@
+# Read the number of test cases
+for _ in range(int(input())):
+    # Read set A (skip the count line)
+    _, a = input(), set(input().split())
+    # Read set B (skip the count line)
+    _, b = input(), set(input().split())
+    
+    # Check if A is a subset of B
+    print(a.issubset(b))
