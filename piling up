@@ -1,0 +1,33 @@
+def solve():
+    # Read number of test cases
+    for _ in range(int(input())):
+        n = int(input())
+        # Use a deque for O(1) pops from both ends
+        cubes = deque(map(int, input().split()))
+       
+        # Initialize current_top with a value larger than any possible cube
+        current_top = float('inf')
+        possible = True
+       
+        while cubes:
+            # Look at the ends
+            left = cubes[0]
+            right = cubes[-1]
+           
+            # Pick the larger of the two available ends
+            if left >= right:
+                pick = cubes.popleft()
+            else:
+                pick = cubes.pop()
+           
+            # Check if the picked cube can fit on the current top
+            if pick <= current_top:
+                current_top = pick
+            else:
+                possible = False
+                break
+       
+        print("Yes" if possible else "No")
+
+if __name__ == '__main__':
+    solve()
