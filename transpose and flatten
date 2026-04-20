@@ -1,0 +1,16 @@
+import numpy
+
+# Read N and M from the first line of input
+n_m_input = input().split()
+n = int(n_m_input[0])
+m = int(n_m_input[1])
+
+# Read the matrix elements from the next N lines of input
+# and create a NumPy array
+my_array = numpy.array([input().split() for _ in range(n)], dtype=int)
+
+# Print the transpose of the array
+print(numpy.transpose(my_array))
+
+# Print the flatten version of the array
+print(my_array.flatten())
