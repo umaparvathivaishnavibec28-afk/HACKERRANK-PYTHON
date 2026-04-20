@@ -1,0 +1,18 @@
+def solve():
+    s = input().strip()
+   
+    # 1. Count each character's occurrences
+    counts = Counter(s)
+   
+    # 2. Sort the items (character, count)
+    # Key logic:
+    # -x[1] makes the count descending
+    # x[0] makes the character name ascending (alphabetical)
+    sorted_chars = sorted(counts.items(), key=lambda x: (-x[1], x[0]))
+   
+    # 3. Print the top 3
+    for char, count in sorted_chars[:3]:
+        print(f"{char} {count}")
+
+if __name__ == '__main__':
+    solve()
