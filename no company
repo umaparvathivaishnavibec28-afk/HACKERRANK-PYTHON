@@ -1,0 +1,24 @@
+def solve():
+    # Read n and m (n is array size, m is set size)
+    n, m = map(int, input().split())
+   
+    # Read the main array
+    arr = list(map(int, input().split()))
+   
+    # Read A and B and convert them to SETS for O(1) lookup
+    set_a = set(map(int, input().split()))
+    set_b = set(map(int, input().split()))
+   
+    happiness = 0
+   
+    # Single pass through the array
+    for x in arr:
+        if x in set_a:
+            happiness += 1
+        elif x in set_b:
+            happiness -= 1
+           
+    print(happiness)
+
+if __name__ == '__main__':
+    solve()
